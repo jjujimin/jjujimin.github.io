@@ -25,10 +25,12 @@ body {
 /* Layout */
 .container {
     display: flex;
+    flex-direction: column;
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
     gap: 20px;
+    padding: 20px;
 }
 
 /* Sidebar Container */
@@ -36,15 +38,43 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 320px;
-    margin: 20px;
-    position: sticky;
-    top: 20px;
-    align-self: flex-start;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: 0;
+    align-self: stretch;
+}
+
+/* Responsive Layout */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        padding: 0;
+    }
+    
+    .sidebar-container {
+        width: 320px;
+        margin: 30px 20px 30px 100px;
+        position: sticky;
+        top: 65px;
+        align-self: flex-start;
+    }
+}
+
+/* Adjust for portrait orientation on mobile */
+@media (max-width: 1023px) and (orientation: portrait) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sidebar, .news-box {
+        margin: 10px 0;
+    }
 }
 
 /* Sidebar */
-.sidebar {
+.sidebar  {
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px) saturate(180%);
@@ -83,6 +113,9 @@ body {
 
 /* News Box */
 .news-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -91,6 +124,15 @@ body {
     padding: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Adjust news box for mobile */
+@media (max-width: 1023px) {
+    .news-box {
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 .news-box:hover {
@@ -185,7 +227,7 @@ body {
     -webkit-backdrop-filter: blur(16px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 24px;
-    margin: 20px 20px 20px 0;
+    margin: 30px 100px 30px 0;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
     transition: all 0.3s ease;
 }
@@ -413,21 +455,23 @@ p {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .container {
-        flex-direction: column;
-    }
     
     .sidebar {
-        width: calc(100% - 40px);
+        width: 100%;
         height: auto;
         position: relative;
         padding: 40px 30px;
-        margin: 20px;
+        margin: 0px;
+    }
+    
+    .news-box{
+        width: 100%;
+        margin: 0px;
     }
     
     .content {
         padding: 40px 30px;
-        margin: 20px;
+        margin: 30px 100px 30px 0;
     }
     
     .publication-item {
@@ -440,7 +484,7 @@ p {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .profile-img {
         width: 150px;
         height: 150px;
@@ -455,6 +499,7 @@ p {
     }
     
     .content {
+        margin: 0px;
         padding: 30px 20px;
     }
 }
