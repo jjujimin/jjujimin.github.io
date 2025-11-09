@@ -25,12 +25,10 @@ body {
 /* Layout */
 .container {
     display: flex;
-    flex-direction: column;
     max-width: 1400px;
     margin: 0 auto;
     min-height: 100vh;
     gap: 20px;
-    padding: 20px;
 }
 
 /* Sidebar Container */
@@ -38,43 +36,15 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    width: 100%;
-    margin: 0;
-    position: relative;
-    top: 0;
-    align-self: stretch;
-}
-
-/* Responsive Layout */
-@media (min-width: 1024px) {
-    .container {
-        flex-direction: row;
-        padding: 0;
-    }
-    
-    .sidebar-container {
-        width: 320px;
-        margin: 20px;
-        position: sticky;
-        top: 45px;
-        align-self: flex-start;
-    }
-}
-
-/* Adjust for portrait orientation on mobile */
-@media (max-width: 1023px) and (orientation: portrait) {
-    .profile-img {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .sidebar, .news-box {
-        margin: 10px 0;
-    }
+    width: 320px;
+    margin: 20px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
 
 /* Sidebar */
-.sidebar  {
+.sidebar {
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px) saturate(180%);
@@ -113,9 +83,6 @@ body {
 
 /* News Box */
 .news-box {
-    width: 100%;
-    max-width: 95%;
-    margin: 0 auto;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -124,15 +91,6 @@ body {
     padding: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
     transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-/* Adjust news box for desktop */
-@media (min-width: 1024px) {
-    .news-box {
-        max-width: 100%;
-        margin: 0;
-    }
 }
 
 .news-box:hover {
