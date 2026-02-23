@@ -182,6 +182,28 @@ body {
     line-height: 1.4;
 }
 
+.single-news-item,
+.single-news-item ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.single-news-item li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.single-news-item li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
 .subtitle {
     font-size: 1rem;
     color: #4b5563;
