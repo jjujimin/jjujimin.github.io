@@ -422,7 +422,9 @@ p {
 
 .pub-image img {
     width: 200px;
-    height: 150px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #e5e7eb;
