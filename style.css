@@ -239,6 +239,12 @@ body {
     transform: translateY(-2px);
 }
 
+.cv-icon {
+    font-size: 0.85em;
+    font-weight: 700;
+    vertical-align: 0.08em;
+}
+
 /* Main Content */
 .content {
     flex: 1;
@@ -274,6 +280,16 @@ p {
     margin-bottom: 15px;
     font-size: 1rem;
     line-height: 1.8;
+}
+
+.poster-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 24px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 20px rgba(31, 41, 55, 0.12);
 }
 
 .link {
